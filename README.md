@@ -24,5 +24,5 @@ a = GetMarkdown('/tmp/test/test.json', 'confluence')
 # start the script
 Type in your terminal
 ``` bash
-python docs.py
+python cf-doc.py
 ```
