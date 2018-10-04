@@ -69,7 +69,6 @@ class GetMarkdown:
         content.append('')
         self.parameters = self.parameters+content
 
-
     def check_zone(self, name):
         visible = ['public', 'private']
         zones = ['a', 'b', 'c']
@@ -84,7 +83,6 @@ class GetMarkdown:
                     z = 'zone %s' % (z.upper())
                     break
         return z
-
 
     def get_the_human_type(self, tp, name):
         lower_name = name.lower()
