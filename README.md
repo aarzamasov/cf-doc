@@ -1,8 +1,8 @@
 # cf-doc
-Creating markdown descriprtion for cloudformation templates
+Creating markdown description for cloud formation templates
 
-# desclaimer
-the script need a json file to create a description.
+# disclaimer
+the script needs a JSON file to create a description.
 
 convert Yaml template with [cfn-flip](https://github.com/awslabs/aws-cfn-template-flip) to Json
 
@@ -11,11 +11,11 @@ for eg:
 cfn-flip vpc.yaml vpc.json
 ```
 
-the script has no attributes this time.
-but you can change the script for set them.
+The script has no attributes this time.
+But you can change it into the script.
 
 you can set:
-- path to Json file
+- the path to JSON file
 - type of markdown: classic or confluence
 
 ```python
@@ -27,3 +27,11 @@ Type in your terminal
 ``` bash
 python cf-doc.py
 ```
+
+# example
+You can find the example of a result of the script in `example` folder.
+The markdown is for confluence article. For adding this two tables to confluence article you need to :
+- push plus button
+- find markup and click it
+- chose confluence type 
+- paste it into the filed of markdown
