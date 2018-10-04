@@ -21,6 +21,7 @@ you can set:
 ```python
 a = GetMarkdown('/tmp/test/test.json', 'confluence')
 ```
+
 # start the script
 Type in your terminal
 ``` bash
