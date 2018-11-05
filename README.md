@@ -1,10 +1,10 @@
 # cf-doc
-Creating markdown description for cloud formation templates
+Creating markdown description from cloud formation templates
 
 # disclaimer
-the script needs a JSON file to create a description.
+the script works only with JSON files.
 
-convert Yaml template with [cfn-flip](https://github.com/awslabs/aws-cfn-template-flip) to Json
+I fyou have YAML just convert it with [cfn-flip](https://github.com/awslabs/aws-cfn-template-flip) to Json
 
 for eg:
 ```bash 
