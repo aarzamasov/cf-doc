@@ -1,3 +1,4 @@
+#!/usr/local/bin/python2.7
 import json
 
 class GetMarkdown:
@@ -109,6 +110,10 @@ class GetMarkdown:
             human_type = 'VPC Gateway'
             desc = 'gateway to Internet'
 
+        if tp == 'AWS::SSM::Parameter':
+            human_type = 'SSM Parameter'
+            desc = 'key in AWS Systems Manager'
+
         if tp == 'AWS::EC2::Subnet':
             human_type = '%s subnet' % visible.capitalize()
             desc = '%s subnet %s' % (visible, zone)
@@ -189,7 +194,6 @@ class GetMarkdown:
         if tp == 'AWS::ElastiCache::SubnetGroup':
             human_type = 'ElastiCache Subnet Group'
 
-
         if tp == 'AWS::Lambda::Function':
             human_type = 'Lambda Function'
 
@@ -201,7 +205,29 @@ class GetMarkdown:
 
         if tp == 'AWS::IAM::Role':
             human_type = 'IAM Role'
-
+        
+        if tp == 'AWS::CloudFront::CloudFrontOriginAccessIdentity':
+            human_type = 'CloudFront Origin Access Identity'
+        
+        if tp == 'AWS::S3::BucketPolicy':
+            human_type = 'S3 Bucket Policy'
+        
+        if tp == 'AWS::S3::Bucket':
+            human_type = 'S3 Bucket'
+        
+        if tp == 'AWS::CloudFront::Distribution':
+            human_type = 'CloudFront Distribution'
+        if tp == 'AWS::ApiGateway::Deployment':
+            human_type = 'Amazon API Gateway'
+        if tp == 'AWS::Lambda::Permission':
+            human_type = 'Lambda Permission'
+            desc = "AWS Lambda (Lambda) function's access policy"
+        if tp == 'AWS::ApiGateway::RestApi':
+            human_type = 'Amazon API Gateway'
+            desc = 'resource contains a collection of Amazon API Gateway resources and methods that can be invoked through HTTPS endpoints.'
+        if tp == 'AWS::IAM::Policy':
+            human_type = 'IAM Policy'
+            desc = 'associates an IAM policy'
         return human_type, desc
 
     def print_md(self):
@@ -215,8 +241,9 @@ class GetMarkdown:
             print i
 
 
-a = GetMarkdown('/tmp/test/test.json', 'confluence')
+a = GetMarkdown('/tmp/1/lambda.json', 'classic')
 a.get_content_of_the_group('Parameters')
 a.get_content_of_the_group('Resources')
 
 a.print_md()
+
